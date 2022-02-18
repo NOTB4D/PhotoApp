@@ -70,10 +70,26 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
+        <!--Setting-->
+        <scene sceneID="h7Y-qs-fhs">
+            <objects>
+                <viewController id="Tpa-E6-FGd" customClass="SettingsViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNt-NJ-AIn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XxC-8x-bxP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setting" image="person.crop.circle.fill" catalog="system" id="fyk-tm-NZJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dk4-8E-6nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="929"/>
+        </scene>
         <!--Upload-->
         <scene sceneID="0pD-aX-rIt">
             <objects>
-                <viewController id="DJf-zZ-R9H" sceneMemberID="viewController">
+                <viewController id="DJf-zZ-R9H" customClass="UploadViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KiI-6J-CY1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +105,7 @@
         <!--Feed-->
         <scene sceneID="cxt-b3-Q0a">
             <objects>
-                <viewController id="gTd-Mc-13v" sceneMemberID="viewController">
+                <viewController id="gTd-Mc-13v" customClass="FeedViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bCL-um-7SC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +131,7 @@
                     <connections>
                         <segue destination="gTd-Mc-13v" kind="relationship" relationship="viewControllers" id="WX8-s1-rf9"/>
                         <segue destination="DJf-zZ-R9H" kind="relationship" relationship="viewControllers" id="QLQ-f0-P73"/>
+                        <segue destination="Tpa-E6-FGd" kind="relationship" relationship="viewControllers" id="ZUb-eZ-xSd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oB-n6-uvr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,6 +141,7 @@
     </scenes>
     <resources>
         <image name="mosaic.fill" catalog="system" width="128" height="114"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

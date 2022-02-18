@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextFeild: UITextField!
     
     @IBOutlet weak var passwordTestFeild: UITextField!
@@ -17,9 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToFeedVC", sender: nil)
+        
     }
     
     
