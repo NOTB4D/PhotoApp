@@ -116,7 +116,6 @@
 				B8D5215C27C0168C00D1D8DB /* Screen */,
 				B8D5211A27BFE16200D1D8DB /* AppDelegate.swift */,
 				B8D5211C27BFE16200D1D8DB /* SceneDelegate.swift */,
-				B8D5211E27BFE16200D1D8DB /* ViewController.swift */,
 				B8D5212327BFE16300D1D8DB /* Assets.xcassets */,
 				B8D5212527BFE16300D1D8DB /* LaunchScreen.storyboard */,
 				B8D5212827BFE16300D1D8DB /* Info.plist */,
@@ -149,6 +148,7 @@
 				B8D5215527C0164600D1D8DB /* FeedViewController.swift */,
 				B8D5215727C0166200D1D8DB /* UploadViewController.swift */,
 				B8D5215927C0167400D1D8DB /* SettingsViewController.swift */,
+				B8D5211E27BFE16200D1D8DB /* ViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";

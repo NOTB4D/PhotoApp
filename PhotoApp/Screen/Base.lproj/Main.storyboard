@@ -32,17 +32,17 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hF-JI-Dcc">
-                                <rect key="frame" x="20" y="380" width="59.5" height="31"/>
+                                <rect key="frame" x="20" y="380" width="60" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sig in"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHL-RF-HnE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upI-vV-cII">
-                                <rect key="frame" x="322" y="380" width="72" height="31"/>
+                                <rect key="frame" x="334.5" y="380" width="59.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
                                     <action selector="logOutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTE-gR-bhv"/>
                                 </connections>
@@ -60,6 +60,7 @@
                             <constraint firstItem="Ffi-5C-uF7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q9y-UQ-ZQt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Kch-cB-s7M"/>
                     <connections>
                         <outlet property="emailTextFeild" destination="StA-66-dju" id="pJH-W0-Vfy"/>
                         <outlet property="passwordTestFeild" destination="ytm-TR-JSc" id="F3f-F0-4e7"/>
@@ -77,10 +78,27 @@
                     <view key="view" contentMode="scaleToFill" id="nNt-NJ-AIn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILY-to-jwV">
+                                <rect key="frame" x="171" y="432.5" width="72" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="Tpa-E6-FGd" eventType="touchUpInside" id="Iu6-oD-3Iv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XxC-8x-bxP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ILY-to-jwV" firstAttribute="centerY" secondItem="nNt-NJ-AIn" secondAttribute="centerY" id="Xur-Ua-dve"/>
+                            <constraint firstItem="ILY-to-jwV" firstAttribute="centerX" secondItem="nNt-NJ-AIn" secondAttribute="centerX" id="i27-O1-bb8"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="person.crop.circle.fill" catalog="system" id="fyk-tm-NZJ"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="gxF-pA-UQg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dk4-8E-6nC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,7 +139,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6eb-gK-wUJ">
             <objects>
-                <tabBarController id="IRv-Om-N8p" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarID" id="IRv-Om-N8p" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qHo-bw-E7b"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ukq-6P-RPg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
