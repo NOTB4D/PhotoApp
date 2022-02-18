@@ -9,11 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailTextFeild: UITextField!
+    
+    @IBOutlet weak var passwordTestFeild: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+    }
+    
 }
 
