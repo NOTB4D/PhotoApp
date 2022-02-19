@@ -25,15 +25,17 @@ class FeedViewController: UIViewController {
     
     
     func getData(){
-        self.images.removeAll(keepingCapacity: false)
-        self.userEmail.removeAll(keepingCapacity: false)
-        self.command.removeAll(keepingCapacity: false)
         let firestoreDatabase = Firestore.firestore()
-        firestoreDatabase.collection("Post").addSnapshotListener { (snapshot, error) in
+        firestoreDatabase.collection("Post").order(by: "date", descending: true).addSnapshotListener { (snapshot, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }else{
                 if ( snapshot?.isEmpty != true && snapshot != nil ){
+                    
+                    self.images.removeAll(keepingCapacity: false)
+                    self.userEmail.removeAll(keepingCapacity: false)
+                    self.command.removeAll(keepingCapacity: false)
+                    
                     for document in snapshot!.documents {
                         //let documentId = document.documentID
                         if let imageUrl =  document.get("imageUrl") as? String{
