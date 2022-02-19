@@ -23,6 +23,7 @@
 		B8D5215627C0164600D1D8DB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215527C0164600D1D8DB /* FeedViewController.swift */; };
 		B8D5215827C0166200D1D8DB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215727C0166200D1D8DB /* UploadViewController.swift */; };
 		B8D5215A27C0167400D1D8DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215927C0167400D1D8DB /* SettingsViewController.swift */; };
+		B8D5215F27C1055B00D1D8DB /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B8D5215527C0164600D1D8DB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B8D5215727C0166200D1D8DB /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		B8D5215927C0167400D1D8DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		B8D5215C27C0168C00D1D8DB /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				B8D5215D27C1052400D1D8DB /* cell */,
 				B8D5212027BFE16200D1D8DB /* Main.storyboard */,
 				B8D5215527C0164600D1D8DB /* FeedViewController.swift */,
 				B8D5215727C0166200D1D8DB /* UploadViewController.swift */,
@@ -151,6 +154,14 @@
 				B8D5211E27BFE16200D1D8DB /* ViewController.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		B8D5215D27C1052400D1D8DB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 			files = (
 				B8D5211F27BFE16200D1D8DB /* ViewController.swift in Sources */,
 				B8D5215827C0166200D1D8DB /* UploadViewController.swift in Sources */,
+				B8D5215F27C1055B00D1D8DB /* FeedTableViewCell.swift in Sources */,
 				B8D5211B27BFE16200D1D8DB /* AppDelegate.swift in Sources */,
 				B8D5215627C0164600D1D8DB /* FeedViewController.swift in Sources */,
 				B8D5211D27BFE16200D1D8DB /* SceneDelegate.swift in Sources */,

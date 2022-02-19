@@ -175,14 +175,77 @@
                     <view key="view" contentMode="scaleToFill" id="bCL-um-7SC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0m2-VT-GBz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="239" id="dxu-4R-5nW" customClass="FeedTableViewCell" customModule="PhotoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="239"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dxu-4R-5nW" id="ihU-J8-bGS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngx-Mp-LUV">
+                                                    <rect key="frame" x="15" y="10" width="290" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sio-Lh-g64">
+                                                    <rect key="frame" x="15" y="39" width="290" height="162"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yorumlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoV-cr-nrH">
+                                                    <rect key="frame" x="14" y="213" width="291" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Ngx-Mp-LUV" secondAttribute="trailing" constant="15" id="HAU-ib-ale"/>
+                                                <constraint firstAttribute="trailing" secondItem="uoV-cr-nrH" secondAttribute="trailing" constant="15" id="Kdw-32-ABK"/>
+                                                <constraint firstItem="Ngx-Mp-LUV" firstAttribute="leading" secondItem="ihU-J8-bGS" secondAttribute="leading" constant="15" id="O9Z-Lt-ZNb"/>
+                                                <constraint firstItem="uoV-cr-nrH" firstAttribute="leading" secondItem="ihU-J8-bGS" secondAttribute="leading" constant="14" id="UJU-CR-1pE"/>
+                                                <constraint firstAttribute="bottom" secondItem="uoV-cr-nrH" secondAttribute="bottom" constant="5" id="XgU-xh-06q"/>
+                                                <constraint firstItem="uoV-cr-nrH" firstAttribute="top" secondItem="Sio-Lh-g64" secondAttribute="bottom" constant="12" id="Xyt-3c-5Uz"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sio-Lh-g64" secondAttribute="trailing" constant="15" id="ZNk-TZ-5kF"/>
+                                                <constraint firstItem="Sio-Lh-g64" firstAttribute="top" secondItem="Ngx-Mp-LUV" secondAttribute="bottom" constant="8.5" id="mNc-fr-cDM"/>
+                                                <constraint firstItem="Ngx-Mp-LUV" firstAttribute="top" secondItem="ihU-J8-bGS" secondAttribute="top" constant="10" id="nS0-IJ-Ic4"/>
+                                                <constraint firstItem="Sio-Lh-g64" firstAttribute="leading" secondItem="ihU-J8-bGS" secondAttribute="leading" constant="15" id="yrg-46-gUA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commandTextLabel" destination="uoV-cr-nrH" id="bwv-8S-2zr"/>
+                                            <outlet property="emailTextLabel" destination="Ngx-Mp-LUV" id="R8g-nE-EZw"/>
+                                            <outlet property="postImageView" destination="Sio-Lh-g64" id="um8-W6-FJh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gTd-Mc-13v" id="WFc-vD-rKP"/>
+                                    <outlet property="delegate" destination="gTd-Mc-13v" id="vSl-PW-P4v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1p7-ZH-ELR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0m2-VT-GBz" firstAttribute="top" secondItem="1p7-ZH-ELR" secondAttribute="top" id="H1y-q5-RjQ"/>
+                            <constraint firstItem="0m2-VT-GBz" firstAttribute="leading" secondItem="1p7-ZH-ELR" secondAttribute="leading" id="KQk-oc-4KH"/>
+                            <constraint firstItem="1p7-ZH-ELR" firstAttribute="bottom" secondItem="0m2-VT-GBz" secondAttribute="bottom" id="Swe-hX-nLQ"/>
+                            <constraint firstItem="1p7-ZH-ELR" firstAttribute="trailing" secondItem="0m2-VT-GBz" secondAttribute="trailing" id="WWd-2A-ZbL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="mosaic.fill" catalog="system" id="Eb9-bd-REt"/>
+                    <connections>
+                        <outlet property="tableView" destination="0m2-VT-GBz" id="MRC-rh-8II"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F6-F2-6Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="-185"/>
+            <point key="canvasLocation" x="1824.375" y="-185.91549295774649"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6eb-gK-wUJ">
