@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class FeedViewController: UIViewController {
     
@@ -24,14 +25,17 @@ class FeedViewController: UIViewController {
     
     
     func getData(){
+        self.images.removeAll(keepingCapacity: false)
+        self.userEmail.removeAll(keepingCapacity: false)
+        self.command.removeAll(keepingCapacity: false)
         let firestoreDatabase = Firestore.firestore()
         firestoreDatabase.collection("Post").addSnapshotListener { (snapshot, error) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
             }else{
                 if ( snapshot?.isEmpty != true && snapshot != nil ){
                     for document in snapshot!.documents {
-                        let documentId = document.documentID
+                        //let documentId = document.documentID
                         if let imageUrl =  document.get("imageUrl") as? String{
                             self.images.append(imageUrl)
                         }
@@ -58,6 +62,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
         cell.emailTextLabel.text = userEmail[indexPath.row]
+        cell.postImageView.sd_setImage(with: URL(string: self.images[indexPath.row]))
         cell.commandTextLabel.text = command[indexPath.row]
         return cell
     }
