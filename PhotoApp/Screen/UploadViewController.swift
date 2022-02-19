@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class UploadViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var infoTextField: UITextField!
@@ -59,11 +59,15 @@ class UploadViewController: UIViewController {
                                         self.aletMessage(header: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
                                     }else {
                                         
+                                        self.selectionLabel.isHidden = false
+                                        self.imageView.image = nil
+                                        self.infoTextField.text = ""
+                                        self.tabBarController?.selectedIndex = 0
                                     }
                                 }
                             }
                             
-
+                            
                         }
                     }
                 }
@@ -78,7 +82,7 @@ class UploadViewController: UIViewController {
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
 }
 extension UploadViewController: UIImagePickerControllerDelegate{
     
