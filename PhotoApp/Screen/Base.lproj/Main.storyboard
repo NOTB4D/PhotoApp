@@ -107,7 +107,6 @@
         <!--Upload-->
         <scene sceneID="0pD-aX-rIt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0dw-rd-iRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="DJf-zZ-R9H" customClass="UploadViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KiI-6J-CY1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -124,9 +123,6 @@
                                 <rect key="frame" x="16" y="320.5" width="290" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="uploadButtonTapped:" destination="DJf-zZ-R9H" eventType="editingDidEnd" id="swK-0L-9lY"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Lütfen Görsel Seciniz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-hJ-gKy">
                                 <rect key="frame" x="14" y="151" width="291" height="35"/>
@@ -138,6 +134,9 @@
                                 <rect key="frame" x="123" y="408.5" width="75" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="uploadButtonTapped:" destination="DJf-zZ-R9H" eventType="touchUpInside" id="EmR-kY-Sdv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HZI-AG-nOV"/>
@@ -165,6 +164,7 @@
                         <outlet property="selectionLabel" destination="dhB-hJ-gKy" id="hO7-FJ-Qcu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dw-rd-iRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1823.2" y="503.20197044334975"/>
         </scene>

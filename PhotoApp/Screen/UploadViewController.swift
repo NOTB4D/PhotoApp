@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UploadViewController: UIViewController {
 
@@ -17,9 +18,9 @@ class UploadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectionLabel.isUserInteractionEnabled = true
+        imageView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-        selectionLabel.addGestureRecognizer(gestureRecognizer)
+        imageView.addGestureRecognizer(gestureRecognizer)
     }
     
     @objc func selectImage(){
@@ -32,8 +33,51 @@ class UploadViewController: UIViewController {
     
     
     @IBAction func uploadButtonTapped(_ sender: Any) {
+        let storage = Storage.storage()
+        let storageRefrance = storage.reference()
+        
+        let mediaFolder = storageRefrance.child("media")
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+            let uuid = UUID().uuidString
+            let imageRefrance = mediaFolder.child("\(uuid).jpg")
+            
+            imageRefrance.putData(data, metadata: nil) { (storagemetadata, error) in
+                if error != nil{
+                    self.aletMessage(header: "Hata", message: error!.localizedDescription)
+                }else {
+                    imageRefrance.downloadURL { (url, error) in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            
+                            let firestoreDatabase = Firestore.firestore()
+                            
+                            if let imageUrl = imageUrl {
+                                let firestorePost = ["imageUrl":imageUrl, "command": self.infoTextField.text!, "email": Auth.auth().currentUser!.email , "date": FieldValue.serverTimestamp()] as [String : Any]
+                                
+                                firestoreDatabase.collection("Post").addDocument(data: firestorePost) { (error) in
+                                    if error != nil{
+                                        self.aletMessage(header: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                                    }else {
+                                        
+                                    }
+                                }
+                            }
+                            
+
+                        }
+                    }
+                }
+            }
+        }
     }
     
+    func aletMessage(header: String, message:String){
+        let alert = UIAlertController(title: header, message: message, preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "Okey", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 extension UploadViewController: UIImagePickerControllerDelegate{
@@ -45,5 +89,6 @@ extension UploadViewController: UIImagePickerControllerDelegate{
     }
 }
 extension UploadViewController:  UINavigationControllerDelegate{
+    
     
 }
