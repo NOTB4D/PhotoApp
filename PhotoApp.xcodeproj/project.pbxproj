@@ -25,6 +25,7 @@
 		B8D5215A27C0167400D1D8DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215927C0167400D1D8DB /* SettingsViewController.swift */; };
 		B8D5215F27C1055B00D1D8DB /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */; };
 		B8D5216227C110E700D1D8DB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B8D5216127C110E700D1D8DB /* SDWebImage */; };
+		B8D5216627C1167C00D1D8DB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5216527C1167C00D1D8DB /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B8D5215727C0166200D1D8DB /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		B8D5215927C0167400D1D8DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		B8D5216527C1167C00D1D8DB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +119,9 @@
 		B8D5211927BFE16200D1D8DB /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8D5216427C1166900D1D8DB /* Model */,
 				B8D5215C27C0168C00D1D8DB /* Screen */,
-				B8D5211A27BFE16200D1D8DB /* AppDelegate.swift */,
-				B8D5211C27BFE16200D1D8DB /* SceneDelegate.swift */,
-				B8D5212327BFE16300D1D8DB /* Assets.xcassets */,
+				B8D5216327C1165B00D1D8DB /* Resource */,
 				B8D5212527BFE16300D1D8DB /* LaunchScreen.storyboard */,
 				B8D5212827BFE16300D1D8DB /* Info.plist */,
 				B8D5214C27BFF9E600D1D8DB /* GoogleService-Info.plist */,
@@ -164,6 +165,24 @@
 				B8D5215E27C1055B00D1D8DB /* FeedTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		B8D5216327C1165B00D1D8DB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5211A27BFE16200D1D8DB /* AppDelegate.swift */,
+				B8D5211C27BFE16200D1D8DB /* SceneDelegate.swift */,
+				B8D5212327BFE16300D1D8DB /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B8D5216427C1166900D1D8DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5216527C1167C00D1D8DB /* PostModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D5211F27BFE16200D1D8DB /* ViewController.swift in Sources */,
+				B8D5216627C1167C00D1D8DB /* PostModel.swift in Sources */,
 				B8D5215827C0166200D1D8DB /* UploadViewController.swift in Sources */,
 				B8D5215F27C1055B00D1D8DB /* FeedTableViewCell.swift in Sources */,
 				B8D5211B27BFE16200D1D8DB /* AppDelegate.swift in Sources */,

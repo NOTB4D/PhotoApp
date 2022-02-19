@@ -13,9 +13,7 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var userEmail = [String]()
-    var command = [String]()
-    var images = [String]()
+    var postModel = [PostModdel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +30,21 @@ class FeedViewController: UIViewController {
             }else{
                 if ( snapshot?.isEmpty != true && snapshot != nil ){
                     
-                    self.images.removeAll(keepingCapacity: false)
-                    self.userEmail.removeAll(keepingCapacity: false)
-                    self.command.removeAll(keepingCapacity: false)
+                    self.postModel.removeAll(keepingCapacity: false)
+                    
                     
                     for document in snapshot!.documents {
                         //let documentId = document.documentID
                         if let imageUrl =  document.get("imageUrl") as? String{
-                            self.images.append(imageUrl)
+                            if let command = document.get("command") as? String {
+                                if let userMail = document.get("email") as? String {
+                                    let post = PostModdel(email: userMail, command: command, imageUrl: imageUrl)
+                                    self.postModel.append(post)
+                                }
+                            }
                         }
-                        if let command = document.get("command") as? String {
-                            self.command.append(command)
-                        }
-                        if let userMail = document.get("email") as? String {
-                            self.userEmail.append(userMail)
-                        }
+                        
+                        
                     }
                     self.tableView.reloadData()
                 }
@@ -58,14 +56,14 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEmail.count
+        return postModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
-        cell.emailTextLabel.text = userEmail[indexPath.row]
-        cell.postImageView.sd_setImage(with: URL(string: self.images[indexPath.row]))
-        cell.commandTextLabel.text = command[indexPath.row]
+        cell.emailTextLabel.text = postModel[indexPath.row].email
+        cell.postImageView.sd_setImage(with: URL(string: self.postModel[indexPath.row].imageUrl))
+        cell.commandTextLabel.text = postModel[indexPath.row].command
         return cell
     }
     
